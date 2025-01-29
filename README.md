@@ -11,7 +11,7 @@ en el proeyecto esta creado por el for es donde mas me tarde implementando funci
 <p>selección el amigo Secreto Random </p>
 ![image](https://github.com/user-attachments/assets/5f7751e0-7c0a-416b-bbb2-5a505847bf09)
 
-Video del proyecto funcionando
+<p>Video del proyecto funcionando</p>
 https://github.com/user-attachments/assets/a3040b74-fb6f-4cd9-97b6-93609fd908dc
 
 
