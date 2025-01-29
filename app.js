@@ -1,39 +1,17 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
 let amigos = [];
-
-let numeroSecreto = 0;
-let intentos = 0;
-
-let numeroMaximo = 10;
-//let campoNombre = "";
-
-
-function asignarTextoElemento(elemento, texto) {
-    let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML = texto;
-    return;
-}
-
-
+let comodin = 0;
 function agregarAmigo() {
-     let campoNombre = document.getElementById('amigo').value;
+     let campoNombre = "";
+      campoNombre =  document.getElementById('amigo').value;
     
-    if (campoNombre != null) {
+    if (campoNombre === null || campoNombre ==="") {
+        alert("Por favor, inserte un nombre.");
+    }else{
         console.log(campoNombre);
         insertarAmigo();
-        limpiarCaja();      
-        //document.getElementById('Añadir').removeAttribute('disabled'); 
-    } 
-    else {
-        //El usuario no acertó.
-        if (campoNombre == null) {
-            alert("Por favor, inserte un nombre.");
-            //asignarTextoElemento('H2',`Acertte el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
-           
-        }
-        //intentos++;
-        limpiarCaja();
+        limpiarCaja();           
     }
     return;
 }
@@ -42,50 +20,54 @@ function limpiarCaja() {
     document.querySelector('#amigo').value = '';
 }
 
-function generarNumeroSecreto() {
-    let numeroGenerado =  Math.floor(Math.random()*numeroMaximo)+1;
+
+
+function sortearAmigo(){
+    let numeroGenerado =  Math.floor(Math.random()*amigos.length);
 
     console.log(numeroGenerado);
-    console.log(listaNumerosSorteados);
+    
     //Si ya sorteamos todos los números
-    if (listaNumerosSorteados.length == numeroMaximo) {
-        asignarTextoElemento('p','Ya se sortearon todos los números posibles');
-    } else {
-        //Si el numero generado está incluido en la lista 
-        if (listaNumerosSorteados.includes(numeroGenerado)) {
-            return generarNumeroSecreto();
-        } else {
-            listaNumerosSorteados.push(numeroGenerado);
-            return numeroGenerado;
-        }
-    }
+    if (numeroGenerado <= amigos.length) {
+        const listaRe = document.getElementById('resultado');
+        const elemento = document.createElement("li");
+     elemento.textContent = "El amigo secreto sorteado es:" + amigos[numeroGenerado];
+     listaRe.appendChild(elemento);
+     console.log(numeroGenerado);
+     limpiarLista();
+    } 
+    document.querySelector('[class="button-draw"]').setAttribute('disabled','true'); 
+}
+
+function limpiarLista(){
+    document.querySelector('#listaAmigos').innerText="";
 }
 
 function insertarAmigo(){
-campoNombre = document.getElementById('amigo').value;
-amigos.push(campoNombre);
-asignarTextoElemento('ul',campoNombre);
+    campoNombre = document.getElementById('amigo').value;
+    amigos.push(campoNombre);
+   const lista = document.getElementById('listaAmigos');
+   for (let i = 0; i < amigos.length; i++) {
+    comodin =amigos.length-1;
+    if(i === comodin){
+    const elemento = document.createElement("li");
+    elemento.textContent = amigos[i];
+    lista.appendChild(elemento);
+    console.log('elementos en array',amigos.length);
+    console.log('posion',i);
+    }
+   // console.log('fuera ifelementos en array',amigos.length);
+    //console.log('fuera if posion',i);
+//asignarTextoElemento('ul',campoNombre);
+   }
 }
 
 
-function condicionesIniciales() {
-   // asignarTextoElemento('h1','Juego del número secreto!');
-    //asignarTextoElemento('p',`Indica un número del 1 al ${numeroMaximo}`);
-    numeroSecreto = generarNumeroSecreto();
-    intentos = 1;
-    console.log(numeroSecreto);
-}
-
-function reiniciarJuego() {
-    //limpiar caja
-    limpiarCaja();
-    //Indicar mensaje de intervalo de números 
-    //Generar el número aleatorio
-    //Inicializar el número intentos
-    condicionesIniciales();
-    //Deshabilitar el botón de nuevo juego
-    document.querySelector('#reiniciar').setAttribute('disabled','true');
-    
-}
-
-condicionesIniciales();
+/*
+sin el for 
+ const elemento = document.createElement("li");
+    elemento.textContent = amigos[amigos.length-1];
+    lista.appendChild(elemento);
+    console.log('elementos en array',amigos.length);
+    console.log('posion',amigos.length-1);
+*/
