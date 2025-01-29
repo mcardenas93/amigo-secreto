@@ -8,8 +8,11 @@ en el proeyecto esta creado por el for es donde mas me tarde implementando funci
 <p>![image](https://github.com/user-attachments/assets/d991e195-ba34-418b-bc0d-569622f3226e)</p>
 <p>se Agregan nombres de Jenny, Linet y Thiago</p>
 <p>![image](https://github.com/user-attachments/assets/d37cf872-236d-493c-b825-a23551211e81)</p>
-nos manda el amigo Secreto Random 
-<p>![image](https://github.com/user-attachments/assets/5f7751e0-7c0a-416b-bbb2-5a505847bf09)<p>
+<p>selección el amigo Secreto Random </p>
+![image](https://github.com/user-attachments/assets/5f7751e0-7c0a-416b-bbb2-5a505847bf09)
+
+Video del proyecto funcionando
+https://github.com/user-attachments/assets/a3040b74-fb6f-4cd9-97b6-93609fd908dc
 
 
 
